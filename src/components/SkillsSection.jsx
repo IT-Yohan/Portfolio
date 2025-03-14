@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaReact, FaSymfony, FaAngular, FaFigma, FaDocker, FaGit, FaJira } from 'react-icons/fa';
-import { SiGooglesheets, SiSonarqube, SiMicrosoftteams as SiTeams, SiGoogledatastudio } from 'react-icons/si';
+import { SiGooglesheets, SiSonarqube, SiTeamspeak as SiTeams, SiGoogledatastudio } from 'react-icons/si';
 
 const SkillsSection = () => {
   const frameworks = [

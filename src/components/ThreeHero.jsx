@@ -1,11 +1,12 @@
 import React from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
+import { Canvas, useFrame, extend } from '@react-three/fiber';
 import { useRef } from 'react';
-import { OrbitControls, PerspectiveCamera, Text3D, Center } from '@react-three/drei';
+import { PerspectiveCamera, Text3D, Center } from '@react-three/drei';
+import { OrbitControls } from '@react-three/drei';
 import * as THREE from 'three';
 
 const RotatingText = () => {
-  const textRef = useRef();
+  const textRef = useRef(null);
   
   useFrame(({ clock }) => {
     if (textRef.current) {

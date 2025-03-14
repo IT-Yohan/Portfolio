@@ -17,6 +17,14 @@ import './components/animations.css';
 import './components/cross-browser-fixes.css';
 import { Suspense, lazy, useState, useEffect } from 'react';
 
+// Import Three.js to ensure it's loaded before any components that use it
+import * as THREE from 'three';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+
+// Make Three.js available globally to avoid initialization issues
+window.THREE = THREE;
+window.OrbitControls = OrbitControls;
+
 // Lazy load components that aren't needed for initial render
 const LazySkillsVisualization = lazy(() => import('./components/SkillsVisualization'));
 const LazyThreeHero = lazy(() => import('./components/ThreeHero'));

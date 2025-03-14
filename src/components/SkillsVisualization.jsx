@@ -1,12 +1,12 @@
 import React, { useRef, useEffect } from 'react';
-import { useFrame } from '@react-three/fiber';
-import { Canvas } from '@react-three/fiber';
-import { OrbitControls, Text, Sphere } from '@react-three/drei';
+import { useFrame, Canvas, extend } from '@react-three/fiber';
+import { Text, Sphere } from '@react-three/drei';
+import { OrbitControls } from '@react-three/drei';
 import * as THREE from 'three';
 
 // Individual skill sphere component
 const SkillSphere = ({ position, name, color, size }) => {
-  const meshRef = useRef();
+  const meshRef = useRef(null);
   
   useFrame(() => {
     if (meshRef.current) {
