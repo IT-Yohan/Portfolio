@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaReact, FaSymfony, FaAngular, FaFigma, FaDocker, FaGit, FaJira } from 'react-icons/fa';
-import { SiGooglesheets, SiSonarqube, SiMicrosoftteams, SiGoogledatastudio } from 'react-icons/si';
+import { SiGooglesheets, SiSonarqube, SiMicrosoftteams as SiTeams, SiGoogledatastudio } from 'react-icons/si';
 
 const SkillsSection = () => {
   const frameworks = [
@@ -18,7 +18,7 @@ const SkillsSection = () => {
     { name: 'SonarQube', icon: <SiSonarqube size={36} className="text-blue-300" />, level: 75 },
     { name: 'Jira', icon: <FaJira size={36} className="text-blue-600" />, level: 85 },
     { name: 'Git', icon: <FaGit size={36} className="text-orange-500" />, level: 95 },
-    { name: 'Teams', icon: <SiMicrosoftteams size={36} className="text-blue-500" />, level: 80 },
+    { name: 'Teams', icon: <SiTeams size={36} className="text-blue-500" />, level: 80 },
   ];
 
   const container = {
