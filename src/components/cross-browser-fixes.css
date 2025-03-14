@@ -1,0 +1,88 @@
+/* Cross-browser compatibility fixes */
+
+/* Firefox specific fixes */
+@-moz-document url-prefix() {
+  .three-canvas canvas {
+    width: 100% !important;
+    height: 100% !important;
+  }
+  
+  .profile-placeholder {
+    background: -moz-linear-gradient(135deg, #1E3A8A 0%, #3B82F6 100%);
+  }
+}
+
+/* Safari specific fixes */
+@media not all and (min-resolution:.001dpcm) { 
+  @supports (-webkit-appearance:none) {
+    .safari-fix {
+      -webkit-transform: translateZ(0);
+    }
+    
+    .bottom-nav {
+      -webkit-backdrop-filter: blur(10px);
+    }
+  }
+}
+
+/* Edge/IE specific fixes */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .ie-fix {
+    transform: none !important;
+  }
+  
+  .bottom-nav {
+    background-color: rgba(30, 58, 138, 0.9);
+  }
+}
+
+/* Mobile specific fixes */
+@media (max-width: 768px) {
+  .mobile-fix {
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Fix for iOS momentum scrolling */
+  .ios-momentum-scrolling {
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Fix for mobile hover states */
+  .mobile-hover {
+    cursor: pointer;
+  }
+}
+
+/* Fix for older browsers that don't support CSS Grid */
+@supports not (display: grid) {
+  .grid-fallback {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .grid-fallback > * {
+    flex: 1 1 300px;
+    margin: 0.5rem;
+  }
+}
+
+/* Fix for browsers that don't support backdrop-filter */
+@supports not (backdrop-filter: blur(10px)) {
+  .bottom-nav {
+    background-color: rgba(30, 58, 138, 0.9);
+  }
+}
+
+/* Ensure proper WebGL rendering across browsers */
+.three-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.three-container canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
